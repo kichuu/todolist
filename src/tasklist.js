@@ -16,6 +16,7 @@ export function renderTasks(tasks) {
             <p>Due: ${task.dueDate}</p>
             <p>Priority: ${task.priority}</p>
             <p>Completed: ${task.completed}</p>
+            <button class="delete-task-button task-complete">Task Complete</button>
         `;
         taskListContainer.appendChild(taskItem);
     });

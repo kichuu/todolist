@@ -13,13 +13,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const displayTasksButton = document.getElementById("display-tasks-button");
-
-    if (displayTasksButton) {
         displayTasksButton.addEventListener("click", () => {
             const tasks = loadTasks(); 
             renderTasks(tasks); 
         });
-    } else {
-        console.error("Display Tasks button not found.");
-    }
+    } 
+);
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const taskListContainer = document.querySelector(".todo-list-container");
+    taskListContainer.addEventListener("click", (event) => {
+        if (event.target.classList.contains("task-complete")) {
+            const taskItem = event.target.closest(".task-item");
+            if (taskItem) {
+                console.log("Task completed!");
+                taskItem.innerHTML = "Task Complete"; 
+            }
+        }
+    });
 });

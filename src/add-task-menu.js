@@ -19,7 +19,6 @@ export function todoinputdisplay() {
     `;
 
     const submitButton = document.getElementById("submit-button");
-    if (submitButton) {
         console.log("test");
         submitButton.addEventListener("click", () => {
             const title = document.getElementById("title").value;
@@ -28,7 +27,5 @@ export function todoinputdisplay() {
             const priority = document.getElementById("priority").value;  
             addToDo(title, description, dueDate, priority, false); 
         });
-    } else {
-        console.error("Submit button not found. Make sure todoinputdisplay() has been called.");
-    }
-}
+    } 
+
