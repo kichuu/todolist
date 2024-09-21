@@ -1,10 +1,25 @@
-console.log("Hello World!");
-import "./styles.css"
-import { createToDo, listdo } from "./todo";
+import "./styles.css";
+import { todoinputdisplay } from "./add-task-menu";
+import { loadTasks, renderTasks } from "./tasklist";
 
-console.log("jFDFi")
+document.addEventListener("DOMContentLoaded", () => {
+    const addTaskButton = document.querySelector(".add-task"); 
 
-const todos = []
+        addTaskButton.addEventListener("click", () => {
+            todoinputdisplay(); 
+        });
+    } 
+);
 
-listdo(todos) 
+document.addEventListener("DOMContentLoaded", () => {
+    const displayTasksButton = document.getElementById("display-tasks-button");
 
+    if (displayTasksButton) {
+        displayTasksButton.addEventListener("click", () => {
+            const tasks = loadTasks(); 
+            renderTasks(tasks); 
+        });
+    } else {
+        console.error("Display Tasks button not found.");
+    }
+});

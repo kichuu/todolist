@@ -1,20 +1,18 @@
-import {} from "date-fns"
+export const todos = []; 
 
-export function createToDo(title ,description, dueDate, priority,completed){
-    return{
-        title:title,
-        description:description,
-        dueDate:dueDate,
-        priority:priority,
-        completed:completed
-    }
-
+export function createToDo(title, description, dueDate, priority, completed) {
+    return {
+        title: title,
+        description: description,
+        dueDate: dueDate,
+        priority: priority,
+        completed: completed
+    };
 }
 
-
-export function listdo(todos){
-    for(let i=0;i<todos.length;i++){
-        console.log(todos[i].title)
-    }
+export function addToDo(title, description, dueDate, priority, completed) {
+    const newToDo = createToDo(title, description, dueDate, priority, completed);
+    todos.push(newToDo);
+    console.log(todos); 
+    localStorage.setItem("localTask", JSON.stringify(todos));
 }
-
